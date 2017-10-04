@@ -20,8 +20,10 @@ public class Drink {
 
         if(sugarNumber == 0)
             command += addNoSugar();
-        else
+        else if(sugarNumber <= 2)
             command += addSugar();
+        else
+            throw new IllegalArgumentException();
 
         return command;
     }
