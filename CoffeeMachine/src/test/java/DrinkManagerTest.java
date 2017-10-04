@@ -43,4 +43,11 @@ public class DrinkManagerTest {
                 new Drink(DrinkManager.CHARACTER_FOR_CHOCOLATE, 1)
         ));
     }
+
+    @Test
+    public void shouldMakeDrinkWithTwoSugar(){
+        Assert.assertEquals("H:2:0", new DrinkManager().make(
+                new Drink(DrinkManager.CHARACTER_FOR_CHOCOLATE, 2)
+        ));
+    }
 }

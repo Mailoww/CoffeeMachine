@@ -31,6 +31,6 @@ public class Drink {
     }
 
     private String addSugar(){
-        return "1" + SEPARATOR_COMMAND + "0";
+        return sugarNumber + SEPARATOR_COMMAND + "0";
     }
 }
