@@ -12,4 +12,9 @@ public class DrinkManagerTest {
     public void shouldMakeTea(){
         Assert.assertEquals("T::", new DrinkManager().makeTea());
     }
+
+    @Test
+    public void shouldMakeChocolate(){
+        Assert.assertEquals("H::", new DrinkManager().makeChocolate());
+    }
 }
