@@ -29,4 +29,18 @@ public class DrinkManagerTest {
                 new Drink(DrinkManager.CHARACTER_FOR_COFFEE, 1)
         ));
     }
+
+    @Test
+    public void shouldMakeTeaWithOneSugar(){
+        Assert.assertEquals("T:1:0", new DrinkManager().make(
+                new Drink(DrinkManager.CHARACTER_FOR_TEA, 1)
+        ));
+    }
+
+    @Test
+    public void shouldMakeChocolateWithOneSugar(){
+        Assert.assertEquals("H:1:0", new DrinkManager().make(
+                new Drink(DrinkManager.CHARACTER_FOR_CHOCOLATE, 1)
+        ));
+    }
 }
