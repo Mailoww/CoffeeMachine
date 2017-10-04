@@ -22,8 +22,6 @@ public class Drink {
             command += addNoSugar();
         else if(sugarNumber <= 2)
             command += addSugar();
-        else
-            throw new IllegalArgumentException();
 
         return command;
     }
@@ -34,5 +32,11 @@ public class Drink {
 
     private String addSugar(){
         return sugarNumber + SEPARATOR_COMMAND + "0";
+    }
+
+    public boolean hasValidParameters(int sugarNumberMinimum, int sugarNumberMaximum) {
+        if(sugarNumber < sugarNumberMinimum || sugarNumber > sugarNumberMaximum)
+            return false;
+        return true;
     }
 }

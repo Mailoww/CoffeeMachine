@@ -53,8 +53,13 @@ public class DrinkManagerTest {
 
     @Test(expected=IllegalArgumentException.class)
     public void shouldThrowExceptionMakeDrinkWithThreeSugar(){
-        Assert.assertEquals("H:3:0", new DrinkManager().make(
-                new Drink(DrinkManager.CHARACTER_FOR_CHOCOLATE, 3)
-        ));
+        new DrinkManager().make(
+                new Drink(DrinkManager.CHARACTER_FOR_CHOCOLATE, 3));
+    }
+
+    @Test(expected=IllegalArgumentException.class)
+    public void shouldThrowExceptionMakeDrinkWithNegativeNumberSugar(){
+        new DrinkManager().make(
+                new Drink(DrinkManager.CHARACTER_FOR_CHOCOLATE, -1));
     }
 }
