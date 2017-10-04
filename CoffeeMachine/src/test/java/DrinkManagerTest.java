@@ -7,4 +7,9 @@ public class DrinkManagerTest {
     public void shouldMakeCoffee(){
         Assert.assertEquals("C::", new DrinkManager().makeCoffee());
     }
+
+    @Test
+    public void shouldMakeTea(){
+        Assert.assertEquals("T::", new DrinkManager().makeTea());
+    }
 }
