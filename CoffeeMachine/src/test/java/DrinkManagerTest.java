@@ -25,6 +25,8 @@ public class DrinkManagerTest {
 
     @Test
     public void shouldMakeCoffeeWithOneSugar(){
-        Assert.assertEquals("C:1:0", new DrinkManager().makeCoffeeWithOneSugar());
+        Assert.assertEquals("C:1:0", new DrinkManager().make(
+                new Drink(DrinkManager.CHARACTER_FOR_COFFEE, 1)
+        ));
     }
 }
