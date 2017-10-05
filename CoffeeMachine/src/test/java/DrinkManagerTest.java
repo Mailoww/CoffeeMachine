@@ -62,4 +62,10 @@ public class DrinkManagerTest {
         new DrinkManager().make(
                 new Drink(DrinkManager.CHARACTER_FOR_CHOCOLATE, -1));
     }
+
+    @Test
+    public void shouldSendAMessage(){
+        String message = "Message test";
+        Assert.assertEquals("M:" + message, new DrinkManager().send(message));
+    }
 }

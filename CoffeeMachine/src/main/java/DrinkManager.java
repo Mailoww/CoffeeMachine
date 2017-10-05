@@ -17,4 +17,8 @@ public class DrinkManager {
     private boolean parametersAreNotValid(Drink drink) {
         return !drink.hasValidParameters(SUGAR_NUMBER_MINIMUM, SUGAR_NUMBER_MAXIMUM);
     }
+
+    public String send(String message) {
+        return "M:" + message;
+    }
 }
