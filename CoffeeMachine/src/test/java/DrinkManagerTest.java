@@ -68,4 +68,12 @@ public class DrinkManagerTest {
         String message = "Message test";
         Assert.assertEquals("M:" + message, new DrinkManager().send(message));
     }
+
+    @Test
+    public void should_command_a_coffee_with_exact_price() {
+        Assert.assertEquals("C:2:0", new DrinkManager().command(
+                new Drink(DrinkManager.CHARACTER_FOR_COFFEE, 2)
+                , 0.6
+        ));
+    }
 }
