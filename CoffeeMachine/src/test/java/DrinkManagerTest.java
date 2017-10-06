@@ -70,7 +70,7 @@ public class DrinkManagerTest {
     }
 
     @Test
-    public void should_command_a_coffee_with_exact_price() {
+    public void should_have_a_coffee_when_costumer_give_the_exact_price() {
         Assert.assertEquals("C:2:0", DrinkManager.create().command(
                 Drink.create(Drink.CHARACTER_FOR_COFFEE, 2)
                 , 0.6
@@ -78,7 +78,7 @@ public class DrinkManagerTest {
     }
 
     @Test
-    public void should_command_a_tea_with_exact_price() {
+    public void should_have_a_tea_when_costumer_give_the_exact_price() {
         Assert.assertEquals("T:2:0", DrinkManager.create().command(
                 Drink.create(Drink.CHARACTER_FOR_TEA, 2)
                 , 0.4
@@ -86,7 +86,7 @@ public class DrinkManagerTest {
     }
 
     @Test
-    public void should_command_a_chocolate_with_exact_price() {
+    public void should_have_a_chocolate_when_costumer_give_the_exact_price() {
         Assert.assertEquals("H:2:0", DrinkManager.create().command(
                 Drink.create(Drink.CHARACTER_FOR_CHOCOLATE, 2)
                 , 0.5
