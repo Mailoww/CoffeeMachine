@@ -10,9 +10,13 @@ public class Drink {
         this.drinkType = drinkType;
     }
 
-    public Drink(char drinkType, int sugarNumber) {
+    private Drink(char drinkType, int sugarNumber) {
         this(drinkType);
         this.sugarNumber = sugarNumber;
+    }
+
+    public static Drink create(char drinkType, int sugarNumber) {
+        return new Drink(drinkType, sugarNumber);
     }
 
     public String getCommand() {

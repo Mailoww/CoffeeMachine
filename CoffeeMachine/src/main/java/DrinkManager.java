@@ -4,12 +4,15 @@ public class DrinkManager {
 
     private static final double PRICE_COFFEE = 0.6;
 
-    public static final char CHARACTER_FOR_COFFEE = 'C';
-    public static final char CHARACTER_FOR_TEA = 'T';
-    public static final char CHARACTER_FOR_CHOCOLATE = 'H';
-
     private final static int SUGAR_NUMBER_MINIMUM = 0;
     private final static int SUGAR_NUMBER_MAXIMUM = 2;
+
+    private DrinkManager() {
+    }
+
+    public static DrinkManager create() {
+        return new DrinkManager();
+    }
 
     public String command(Drink drink, double price) {
         if(price == PRICE_COFFEE)
