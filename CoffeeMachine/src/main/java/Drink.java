@@ -10,7 +10,7 @@ public class Drink {
     private char drinkType;
     private int sugarNumber;
 
-    public Drink(char drinkType) {
+    private Drink(char drinkType) {
         this.drinkType = drinkType;
     }
 
@@ -21,6 +21,10 @@ public class Drink {
 
     public static Drink create(char drinkType, int sugarNumber) {
         return new Drink(drinkType, sugarNumber);
+    }
+
+    public static Drink create(char drinkType) {
+        return new Drink(drinkType);
     }
 
     public String getCommand() {
