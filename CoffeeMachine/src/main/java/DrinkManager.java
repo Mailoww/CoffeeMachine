@@ -3,6 +3,7 @@ public class DrinkManager {
     public static final String BASE_MESSAGE_FOR_SEND_MESSAGE = "M:";
 
     private static final double PRICE_COFFEE = 0.6;
+    private static final double PRICE_TEA = 0.4;
 
     private final static int SUGAR_NUMBER_MINIMUM = 0;
     private final static int SUGAR_NUMBER_MAXIMUM = 2;
@@ -15,7 +16,8 @@ public class DrinkManager {
     }
 
     public String command(Drink drink, double price) {
-        if(price == PRICE_COFFEE)
+        if(drink.isCoffee() && price == PRICE_COFFEE
+                || drink.isTea() && price == PRICE_TEA)
             return make(drink);
         return null;
     }

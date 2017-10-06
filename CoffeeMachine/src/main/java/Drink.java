@@ -1,6 +1,10 @@
 
 public class Drink {
 
+    public static final char CHARACTER_FOR_COFFEE = 'C';
+    public static final char CHARACTER_FOR_TEA = 'T';
+    public static final char CHARACTER_FOR_CHOCOLATE = 'H';
+
     private final static String SEPARATOR_COMMAND = ":";
 
     private char drinkType;
@@ -42,5 +46,13 @@ public class Drink {
         if(sugarNumber < sugarNumberMinimum || sugarNumber > sugarNumberMaximum)
             return false;
         return true;
+    }
+
+    public boolean isCoffee() {
+        return drinkType == CHARACTER_FOR_COFFEE;
+    }
+
+    public boolean isTea() {
+        return drinkType == CHARACTER_FOR_TEA;
     }
 }
