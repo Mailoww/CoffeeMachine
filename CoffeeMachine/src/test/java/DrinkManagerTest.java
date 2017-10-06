@@ -84,4 +84,12 @@ public class DrinkManagerTest {
                 , 0.4
         ));
     }
+
+    @Test
+    public void should_command_a_chocolate_with_exact_price() {
+        Assert.assertEquals("H:2:0", DrinkManager.create().command(
+                Drink.create(Drink.CHARACTER_FOR_CHOCOLATE, 2)
+                , 0.5
+        ));
+    }
 }

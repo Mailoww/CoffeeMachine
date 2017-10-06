@@ -55,4 +55,8 @@ public class Drink {
     public boolean isTea() {
         return drinkType == CHARACTER_FOR_TEA;
     }
+
+    public boolean isChocolate() {
+        return drinkType == CHARACTER_FOR_CHOCOLATE;
+    }
 }
