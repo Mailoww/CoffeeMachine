@@ -4,6 +4,7 @@ public class Drink {
     public static final char CHARACTER_FOR_COFFEE = 'C';
     public static final char CHARACTER_FOR_TEA = 'T';
     public static final char CHARACTER_FOR_CHOCOLATE = 'H';
+    public static final char CHARACTER_FOR_ORANGE_JUICE = 'O';
 
     private final static String SEPARATOR_COMMAND = ":";
 

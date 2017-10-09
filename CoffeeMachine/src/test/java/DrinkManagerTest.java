@@ -19,6 +19,7 @@ public class DrinkManagerTest {
 
     public static final String HOT_COFFEE = "Ch::";
     public static final String HOT_CHOCOLATE = "Hh::";
+    public static final String ORANGE_JUICE = "O::";
 
     @Test
     public void should_make_coffee() {
@@ -98,5 +99,12 @@ public class DrinkManagerTest {
         Assertions.assertThat(DrinkManager.create().make(
                 Drink.create(Drink.CHARACTER_FOR_CHOCOLATE, true)))
                 .isEqualTo(HOT_CHOCOLATE);
+    }
+
+    @Test
+    public void should_make_an_orange_juice() throws Exception {
+        Assertions.assertThat(DrinkManager.create().make(
+                Drink.create(Drink.CHARACTER_FOR_ORANGE_JUICE)))
+                .isEqualTo(ORANGE_JUICE);
     }
 }
