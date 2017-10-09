@@ -23,7 +23,7 @@ public class DrinkManager {
         return !drink.hasValidParameters(SUGAR_NUMBER_MINIMUM, SUGAR_NUMBER_MAXIMUM);
     }
 
-    public String send(String message) {
+    public static String send(String message) {
         return BASE_MESSAGE_FOR_SEND_MESSAGE + message;
     }
 }

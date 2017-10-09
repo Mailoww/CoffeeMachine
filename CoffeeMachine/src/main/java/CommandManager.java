@@ -12,10 +12,18 @@ public class CommandManager {
     }
 
     public String make(Drink drink, double price) {
-        if(drink.isCoffee() && price == PRICE_COFFEE
-                || drink.isTea() && price == PRICE_TEA
-                || drink.isChocolate() && price == PRICE_CHOCOLATE)
+        if(drink.isCoffee())
+            return produce(drink, price, PRICE_COFFEE);
+        else if(drink.isTea())
+            return produce(drink, price, PRICE_TEA);
+        else
+            return produce(drink, price, PRICE_CHOCOLATE);
+    }
+
+    private String produce(Drink drink, double currentPrice, double expectedPrice) {
+        if(currentPrice == expectedPrice)
             return DrinkManager.make(drink);
-        return null;
+        else
+            return DrinkManager.send("Il manque " + (expectedPrice - currentPrice) + "€");
     }
 }

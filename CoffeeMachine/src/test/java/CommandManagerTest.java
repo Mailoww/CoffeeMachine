@@ -72,4 +72,12 @@ public class CommandManagerTest {
                 .isNotEqualTo(TEA_WITH_ONE_SUGAR)
                 .isNotEqualTo(TEA_WITH_TWO_SUGAR);
     }
+
+    @Test
+    public void should_send_message_with_missing_amount_when_the_price_is_not_enough() throws Exception {
+        Assertions.assertThat(CommandManager.create().make(
+                Drink.create(Drink.CHARACTER_FOR_TEA)
+                , 0.2))
+                .isEqualTo("M:Il manque 0.2€");
+    }
 }
