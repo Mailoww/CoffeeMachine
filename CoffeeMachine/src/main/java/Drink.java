@@ -16,9 +16,17 @@ public class Drink {
         this.drinkType = drinkType;
     }
 
+    public static Drink create(char drinkType) {
+        return new Drink(drinkType);
+    }
+
     private Drink(char drinkType, int sugarNumber) {
         this(drinkType);
         this.sugarNumber = sugarNumber;
+    }
+
+    public static Drink create(char drinkType, int sugarNumber) {
+        return new Drink(drinkType, sugarNumber);
     }
 
     public Drink(char drinkType, boolean isHotDrink) {
@@ -30,12 +38,13 @@ public class Drink {
         return new Drink(drinkType, isHotDrink);
     }
 
-    public static Drink create(char drinkType, int sugarNumber) {
-        return new Drink(drinkType, sugarNumber);
+    public Drink(char drinkType, int sugarNumber, boolean isHotDrink) {
+        this(drinkType, sugarNumber);
+        this.isHotDrink = isHotDrink;
     }
 
-    public static Drink create(char drinkType) {
-        return new Drink(drinkType);
+    public static Drink create(char drinkType, int sugarNumber, boolean isHotDrink) {
+        return new Drink(drinkType, sugarNumber, isHotDrink);
     }
 
     public String getCommand() {

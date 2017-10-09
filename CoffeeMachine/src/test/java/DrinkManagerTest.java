@@ -20,6 +20,7 @@ public class DrinkManagerTest {
     public static final String HOT_COFFEE = "Ch::";
     public static final String HOT_CHOCOLATE = "Hh::";
     public static final String ORANGE_JUICE = "O::";
+    public static final String HOT_TEA_WITH_ONE_SUGAR_AND_ONE_STICK = "Th:1:0";
 
     @Test
     public void should_make_coffee() {
@@ -99,6 +100,13 @@ public class DrinkManagerTest {
         Assertions.assertThat(DrinkManager.create().make(
                 Drink.create(Drink.CHARACTER_FOR_CHOCOLATE, true)))
                 .isEqualTo(HOT_CHOCOLATE);
+    }
+
+    @Test
+    public void should_make_a_hot_tea_with_one_sugar() throws Exception {
+        Assertions.assertThat(DrinkManager.create().make(
+                Drink.create(Drink.CHARACTER_FOR_TEA, 1, true)))
+                .isEqualTo(HOT_TEA_WITH_ONE_SUGAR_AND_ONE_STICK);
     }
 
     @Test
