@@ -15,6 +15,7 @@ public class DrinkManagerTest {
     public static final String CHOCOLATE_WITHOUT_SUGAR = "H::";
     public static final String TEA_WITHOUT_SUGAR = "T::";
     public static final String COFFEE_WITHOUT_SUGAR = "C::";
+    public static final String HOT_COFFEE_WITHOUT_SUGAR = "Ch::";
 
     public static final String HOT_COFFEE = "Ch::";
     public static final String HOT_CHOCOLATE = "Hh::";

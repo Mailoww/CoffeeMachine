@@ -9,6 +9,7 @@ public class Drink {
 
     private char drinkType;
     private int sugarNumber;
+    private boolean isHotDrink;
 
     private Drink(char drinkType) {
         this.drinkType = drinkType;
@@ -17,6 +18,15 @@ public class Drink {
     private Drink(char drinkType, int sugarNumber) {
         this(drinkType);
         this.sugarNumber = sugarNumber;
+    }
+
+    public Drink(char drinkType, boolean isHotDrink) {
+        this(drinkType);
+        this.isHotDrink = isHotDrink;
+    }
+
+    public static Drink create(char drinkType, boolean isHotDrink) {
+        return new Drink(drinkType, isHotDrink);
     }
 
     public static Drink create(char drinkType, int sugarNumber) {
@@ -28,7 +38,10 @@ public class Drink {
     }
 
     public String getCommand() {
-        String command = drinkType + SEPARATOR_COMMAND;
+        String command = "" + drinkType;
+        if(isHotDrink)
+            command += "h";
+        command += SEPARATOR_COMMAND;
 
         if(sugarNumber == 0)
             command += addNoSugar();
