@@ -87,4 +87,11 @@ public class CommandManagerTest {
                 , 0.6))
                 .isEqualTo(TEA_WITHOUT_SUGAR);
     }
+    @Test
+    public void should_send_an_error_message_when_error_parameters() throws Exception {
+        Assertions.assertThat(CommandManager.create().make(
+                Drink.create('X')
+                , 0.6))
+                .isEqualTo("M:Erreur - contacter le service client");
+    }
 }

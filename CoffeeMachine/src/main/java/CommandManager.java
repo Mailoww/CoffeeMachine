@@ -6,6 +6,7 @@ public class CommandManager {
     private static final double PRICE_COFFEE = 0.6;
     private static final double PRICE_CHOCOLATE = 0.5;
     private static final double PRICE_TEA = 0.4;
+    public static final String ERROR_CONTACT_COSTUMER_SERVICE = "Erreur - contacter le service client";
     private Drink drink;
     private double currentPrice;
 
@@ -20,8 +21,10 @@ public class CommandManager {
             return produce(PRICE_COFFEE);
         else if(drink.isTea())
             return produce(PRICE_TEA);
-        else
+        else if(drink.isChocolate())
             return produce(PRICE_CHOCOLATE);
+
+        return DrinkManager.send(ERROR_CONTACT_COSTUMER_SERVICE);
     }
 
     private String produce(double expectedPrice) {
