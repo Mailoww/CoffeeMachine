@@ -16,6 +16,9 @@ public class DrinkManagerTest {
     public static final String TEA_WITHOUT_SUGAR = "T::";
     public static final String COFFEE_WITHOUT_SUGAR = "C::";
 
+    public static final String HOT_COFFEE = "Ch::";
+    public static final String HOT_CHOCOLATE = "Hh::";
+
     @Test
     public void should_make_coffee() {
         Assert.assertEquals(COFFEE_WITHOUT_SUGAR, DrinkManager.create().make(
@@ -80,5 +83,19 @@ public class DrinkManagerTest {
     public void should_send_a_message() {
         String message = "Message test";
         Assert.assertEquals("M:" + message, DrinkManager.create().send(message));
+    }
+
+    @Test
+    public void should_make_a_hot_coffee() throws Exception {
+        Assertions.assertThat(DrinkManager.create().make(
+                Drink.create(Drink.CHARACTER_FOR_COFFEE, true)))
+                .isEqualTo(HOT_COFFEE);
+    }
+
+    @Test
+    public void should_make_a_hot_chocolate() throws Exception {
+        Assertions.assertThat(DrinkManager.create().make(
+                Drink.create(Drink.CHARACTER_FOR_CHOCOLATE, true)))
+                .isEqualTo(HOT_CHOCOLATE);
     }
 }
