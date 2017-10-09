@@ -25,9 +25,9 @@ public class CommandManager {
     }
 
     private String produce(double expectedPrice) {
-        if(currentPrice == expectedPrice)
-            return DrinkManager.make(drink);
-        else
+        if(currentPrice < expectedPrice)
             return DrinkManager.send("Il manque " + (expectedPrice - currentPrice) + "€");
+        else
+            return DrinkManager.make(drink);
     }
 }

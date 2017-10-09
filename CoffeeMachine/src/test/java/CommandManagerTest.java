@@ -80,4 +80,11 @@ public class CommandManagerTest {
                 , 0.2))
                 .isEqualTo("M:Il manque 0.2€");
     }
+    @Test
+    public void should_make_a_drink_when_larger_price() throws Exception {
+        Assertions.assertThat(CommandManager.create().make(
+                Drink.create(Drink.CHARACTER_FOR_TEA)
+                , 0.6))
+                .isEqualTo(TEA_WITHOUT_SUGAR);
+    }
 }
