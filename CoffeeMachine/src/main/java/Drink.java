@@ -1,18 +1,30 @@
 
 public class Drink {
 
+    public static final char CHARACTER_FOR_COFFEE = 'C';
+    public static final char CHARACTER_FOR_TEA = 'T';
+    public static final char CHARACTER_FOR_CHOCOLATE = 'H';
+
     private final static String SEPARATOR_COMMAND = ":";
 
     private char drinkType;
     private int sugarNumber;
 
-    public Drink(char drinkType) {
+    private Drink(char drinkType) {
         this.drinkType = drinkType;
     }
 
-    public Drink(char drinkType, int sugarNumber) {
+    private Drink(char drinkType, int sugarNumber) {
         this(drinkType);
         this.sugarNumber = sugarNumber;
+    }
+
+    public static Drink create(char drinkType, int sugarNumber) {
+        return new Drink(drinkType, sugarNumber);
+    }
+
+    public static Drink create(char drinkType) {
+        return new Drink(drinkType);
     }
 
     public String getCommand() {
@@ -38,5 +50,17 @@ public class Drink {
         if(sugarNumber < sugarNumberMinimum || sugarNumber > sugarNumberMaximum)
             return false;
         return true;
+    }
+
+    public boolean isCoffee() {
+        return drinkType == CHARACTER_FOR_COFFEE;
+    }
+
+    public boolean isTea() {
+        return drinkType == CHARACTER_FOR_TEA;
+    }
+
+    public boolean isChocolate() {
+        return drinkType == CHARACTER_FOR_CHOCOLATE;
     }
 }
