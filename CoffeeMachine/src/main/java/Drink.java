@@ -4,14 +4,20 @@ public class Drink {
     public static final char CHARACTER_FOR_COFFEE = 'C';
     public static final char CHARACTER_FOR_TEA = 'T';
     public static final char CHARACTER_FOR_CHOCOLATE = 'H';
+    public static final char CHARACTER_FOR_ORANGE_JUICE = 'O';
 
     private final static String SEPARATOR_COMMAND = ":";
 
     private char drinkType;
     private int sugarNumber;
+    private boolean isHotDrink;
 
     private Drink(char drinkType) {
         this.drinkType = drinkType;
+    }
+
+    public static Drink create(char drinkType) {
+        return new Drink(drinkType);
     }
 
     private Drink(char drinkType, int sugarNumber) {
@@ -23,12 +29,29 @@ public class Drink {
         return new Drink(drinkType, sugarNumber);
     }
 
-    public static Drink create(char drinkType) {
-        return new Drink(drinkType);
+    public Drink(char drinkType, boolean isHotDrink) {
+        this(drinkType);
+        this.isHotDrink = isHotDrink;
+    }
+
+    public static Drink create(char drinkType, boolean isHotDrink) {
+        return new Drink(drinkType, isHotDrink);
+    }
+
+    public Drink(char drinkType, int sugarNumber, boolean isHotDrink) {
+        this(drinkType, sugarNumber);
+        this.isHotDrink = isHotDrink;
+    }
+
+    public static Drink create(char drinkType, int sugarNumber, boolean isHotDrink) {
+        return new Drink(drinkType, sugarNumber, isHotDrink);
     }
 
     public String getCommand() {
-        String command = drinkType + SEPARATOR_COMMAND;
+        String command = "" + drinkType;
+        if(isHotDrink)
+            command += "h";
+        command += SEPARATOR_COMMAND;
 
         if(sugarNumber == 0)
             command += addNoSugar();
